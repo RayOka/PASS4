@@ -12,7 +12,7 @@ end LEDDEC;
 
 architecture RTL of LEDDEC is
 begin
-	process (DATA, TMODE, TUNLOCK) begin
+	process (DATA, TMODE) begin
 		if (TMODE = '1') then
 			case DATA is
 				when "0000" => LEDOUT <= "11000000";
