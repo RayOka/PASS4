@@ -14,14 +14,14 @@ architecture RTL of PASS4 is
 	signal TDIGIT, TUNLOCK : std_logic;
 	
 component SWITCH port (
-		CLK : in std_logic;			-- global clock
-		RSTN : in std_logic;			-- key input asynohronous RESET
-		A_N : in std_logic;			-- key input A
-		B_N : in std_logic;			-- key input B
-		ENTER_N : in std_logic; 	-- key input ENTER
-		A_ONE : out std_logic;		-- A one-shot
-		B_ONE : out std_logic;		-- B one-shot
-		ENTER_ONE : out std_logic 	-- ENTER one-shot
+		CLK : in std_logic;
+		RSTN : in std_logic;
+		A_N : in std_logic;
+		B_N : in std_logic;
+		ENTER_N : in std_logic;
+		A_ONE : out std_logic;
+		B_ONE : out std_logic;
+		ENTER_ONE : out std_logic
 	);
 end component;
 
