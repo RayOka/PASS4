@@ -2,7 +2,48 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "LED0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RESET",
+					"strict" : false
+				},
+				{
+					"name" : "ENTER",
+					"strict" : false
+				},
+				{
+					"name" : "MODE",
+					"strict" : false
+				},
+				{
+					"name" : "A",
+					"strict" : false
+				},
+				{
+					"name" : "B",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

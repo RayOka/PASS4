@@ -6,7 +6,6 @@ entity CLKDOWN is
 	port (
 		CLK : in std_logic;			-- global clock 50MHz
 		RSTN : in std_logic;			-- global reset signal
-		ENABLE : out std_logic;		-- enable (1 sec interval)
 		EN100MSEC : out std_logic	-- enable (100m sec interval)
 	);
 end CLKDOWN;
@@ -29,23 +28,8 @@ architecture RTL of CLKDOWN is
 							:= "00000000000000000000000";
 							 
 begin
-
-	TIMER1SEC : process (CLK, RSTN) begin
-		if (RSTN = '0') then
-			COUNT26 <= ZERO26BIT;
-			ENABLE <= '0';
-		elsif (CLK'event and CLK = '1') then
-			if (COUNT26 = ZERO26BIT) then
-				COUNT26 <= MAX26BIT;
-				ENABLE <= '1';
-			else
-				COUNT26 <= COUNT26 - 1;
-				ENABLE <= '0';
-			end if;
-		end if;
-	end process;
 	
-	TIMER100MSEC : process(CLK, RSTN) begin
+	process(CLK, RSTN) begin
 		if (RSTN = '0') then
 			COUNT23 <= MAX23BIT;
 			EN100MSEC <= '0';
