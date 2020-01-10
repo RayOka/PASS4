@@ -14,10 +14,11 @@ entity DATAPATH is
 		TENTER : in std_logic;
 		UNLOCK_N : out std_logic;
 		TRESET : out std_logic;
-		LED0 : out std_logic_vector(7 downto 0);
-		LED1 : out std_logic_vector(7 downto 0);
-		LED2 : out std_logic_vector(7 downto 0);
-		LED3 : out std_logic_vector(7 downto 0)
+		LED0 : out std_logic_vector(6 downto 0);
+		LED1 : out std_logic_vector(6 downto 0);
+		LED2 : out std_logic_vector(6 downto 0);
+		LED3 : out std_logic_vector(6 downto 0);
+		MLED : out std_logic_vector(6 downto 0)
 	);
 end DATAPATH;
 
@@ -26,7 +27,7 @@ architecture RTL of DATAPATH is
 	signal TUNLOCK : std_logic;
 	signal TNUM : std_logic_vector(15 downto 0);
 	signal TDIGIT : std_logic_vector(1 downto 0);
-	signal DISP0, DISP1, DISP2, DISP3 : std_logic_vector(3 downto 0);
+	signal TDISP0, TDISP1, TDISP2, TDISP3, TMDISP : std_logic_vector(3 downto 0);
 	
 	component CHANGER 
 		port (
@@ -53,22 +54,24 @@ architecture RTL of DATAPATH is
 
 	component DISP_CTL
 		port (
+			CLK : in std_logic;
 			FLASH : in std_logic;
 			UNLOCK : in std_logic;
+			MODE_N : in std_logic;
 			DIGIT : in std_logic_vector(1 downto 0);
 			NUM : in std_logic_vector(15 downto 0);
 			DISP0 : out std_logic_vector(3 downto 0);
 			DISP1 : out std_logic_vector(3 downto 0);
 			DISP2 : out std_logic_vector(3 downto 0);
-			DISP3 : out std_logic_vector(3 downto 0)
+			DISP3 : out std_logic_vector(3 downto 0);
+			MDISP : out std_logic_vector(3 downto 0)
 		);
 	end component;
 	
 	component LEDDEC
 		port (
 			DATA : in std_logic_vector(3 downto 0);
-			TMODE: in std_logic;
-			LEDOUT : out std_logic_vector(7 downto 0)
+			LEDOUT : out std_logic_vector(6 downto 0)
 		);
 	end component;
 	
@@ -85,21 +88,25 @@ begin
 	);
 	
 	U3 : DISP_CTL port map (
-		FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, DIGIT=>TDIGIT, NUM=>TNUM,
-		DISP0=>DISP0, DISP1=>DISP1, DISP2=>DISP2, DISP3=>DISP3
+		CLK=>CLK, FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, MODE_N=>TMODE, DIGIT=>TDIGIT, NUM=>TNUM,
+		DISP0=>TDISP0, DISP1=>TDISP1, DISP2=>TDISP2, DISP3=>TDISP3, MDISP=>TMDISP
 	);
 	
 	U4 : LEDDEC port map (
-		DATA=>DISP0, TMODE=>TMODE, LEDOUT=>LED0
+		DATA=>TDISP0, LEDOUT=>LED0
 	);
 	U5 : LEDDEC port map (
-		DATA=>DISP1, TMODE=>TMODE, LEDOUT=>LED1
+		DATA=>TDISP1, LEDOUT=>LED1
 	);
 	U6 : LEDDEC port map (
-		DATA=>DISP2, TMODE=>TMODE, LEDOUT=>LED2
+		DATA=>TDISP2, LEDOUT=>LED2
 	);
 	U7 : LEDDEC port map (
-		DATA=>DISP3, TMODE=>TMODE, LEDOUT=>LED3
+		DATA=>TDISP3, LEDOUT=>LED3
+	);
+	
+	U8 : LEDDEC port map (
+		DATA=>TMDISP, LEDOUT=>MLED
 	);
 	
 	UNLOCK_N <= TUNLOCK;

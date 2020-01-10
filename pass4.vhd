@@ -9,10 +9,11 @@ entity PASS4 is
 		A : in std_logic;
 		B : in std_logic;
 		ENTER : in std_logic;
-		LED0 : out std_logic_vector(7 downto 0);
-		LED1 : out std_logic_vector(7 downto 0);
-		LED2 : out std_logic_vector(7 downto 0);
-		LED3 : out std_logic_vector(7 downto 0)
+		LED0 : out std_logic_vector(6 downto 0);
+		LED1 : out std_logic_vector(6 downto 0);
+		LED2 : out std_logic_vector(6 downto 0);
+		LED3 : out std_logic_vector(6 downto 0);
+		MLED : out std_logic_vector(6 downto 0)
 	);
 end PASS4;
 
@@ -76,10 +77,11 @@ architecture RTL of PASS4 is
 			TRIGHT : in std_logic;
 			TENTER : in std_logic;
 			UNLOCK_N : out std_logic;
-			LED0 : out std_logic_vector(7 downto 0);
-			LED1 : out std_logic_vector(7 downto 0);
-			LED2 : out std_logic_vector(7 downto 0);
-			LED3 : out std_logic_vector(7 downto 0)
+			LED0 : out std_logic_vector(6 downto 0);
+			LED1 : out std_logic_vector(6 downto 0);
+			LED2 : out std_logic_vector(6 downto 0);
+			LED3 : out std_logic_vector(6 downto 0);
+			MLED : out std_logic_vector(6 downto 0)
 		);
 	end component;	
 
@@ -101,7 +103,7 @@ begin
 	U4 : DATAPATH port map (
 		CLK=>CLK, RESET=>RESET, EN100MSEC=>EN100MSEC, TMODE=>MODE, TINC=>TINC,
 		TDEC=>TDEC, TLEFT=>TLEFT, TRIGHT=>TRIGHT, TENTER=>TENTER, UNLOCK_N=>TUNLOCK,
-		LED0=>LED0, LED1=>LED1, LED2=>LED2, LED3=>LED3
+		LED0=>LED0, LED1=>LED1, LED2=>LED2, LED3=>LED3, MLED=>MLED
 	);
 
 end RTL;

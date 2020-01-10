@@ -11,18 +11,12 @@ entity CLKDOWN is
 end CLKDOWN;
 		
 architecture RTL of CLKDOWN is
-	signal COUNT26 : std_logic_vector(25 downto 0);
+
 	signal COUNT23 : std_logic_vector(22 downto 0);
-	
-	constant MAX26BIT : std_logic_vector(25 downto 0)
---				         := "10111110101111000010000000";
-							:= "00000000000000000000000010";
-							
-	constant ZERO26BIT : std_logic_vector(25 downto 0)
-				          := "00000000000000000000000000";
 							 
 	constant MAX23BIT : std_logic_vector(22 downto 0)
-						   :="10011000100101101000000";
+						   --:="10011000100101101000000";
+							:="00000000000000000000011";		-- for simulation
 						  
    constant ZERO23BIT : std_logic_vector(22 downto 0)
 							:= "00000000000000000000000";

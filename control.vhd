@@ -26,7 +26,7 @@ begin
 	
 	STATE_SET : process(CLK, RSTN, MODE) begin
 		if (RSTN = '0') then
-			if (MODE = '0') then
+			if (MODE = '1') then
 				CURRENT_STATE <= VALUE_ST;
 			else
 				CURRENT_STATE <= DIGIT_ST;
@@ -39,9 +39,9 @@ begin
 	STATE_TRANS : process(MODE, A, B, UNLOCK, CURRENT_STATE) begin
 		if (CURRENT_STATE = VALUE_ST) then
 			if (A = '1') then
-				NEXT_STATE <= INC_ST;
-			elsif (B = '1') then
 				NEXT_STATE <= DEC_ST;
+			elsif (B = '1') then
+				NEXT_STATE <= INC_ST;
 			elsif (MODE = '0') then
 				NEXT_STATE <= DIGIT_ST;
 			elsif (UNLOCK = '1') then
@@ -61,6 +61,14 @@ begin
 			else
 				NEXT_STATE <= DIGIT_ST;
 			end if;
+		elsif (CURRENT_STATE = DEC_ST) then
+			NEXT_STATE <= VALUE_ST;
+		elsif (CURRENT_STATE = INC_ST) then
+			NEXT_STATE <= VALUE_ST;
+		elsif (CURRENT_STATE = LEFT_ST) then
+			NEXT_STATE <= DIGIT_ST;
+		elsif (CURRENT_STATE = RIGHT_ST) then
+			NEXT_STATE <= DIGIT_ST;
 		end if;
 	end process;
 	
