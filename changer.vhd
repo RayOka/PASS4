@@ -107,13 +107,14 @@ begin
 					TDIGIT <= TDIGIT + 1;
 				end if;
 			end if;
-		end if;
+		end if;		
+		TNUM(15 downto 12) <= D0;
+		TNUM(11 downto 8) <= D1;
+		TNUM(7 downto 4) <= D2;
+		TNUM(3 downto 0) <= D3;
+		DIGITN <= TDIGIT;
 	end process;
 	
-	TNUM(15 downto 12) <= D0;
-	TNUM(11 downto 8) <= D1;
-	TNUM(7 downto 4) <= D2;
-	TNUM(3 downto 0) <= D3;
-	DIGITN <= TDIGIT;
+
 	
 end RTL;

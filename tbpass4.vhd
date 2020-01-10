@@ -42,7 +42,10 @@ begin
 	end process;
 	
 	process begin
-		TBMODE <= '0'; wait for 200 ns;
+		TBMODE <= '0';
+		TBA <= '1';
+		TBB <= '1';
+		TBENTER <= '1'; wait for 200 ns;
 		TBA <= '0'; wait for 200 ns;
 		TBA <= '1'; wait for 200 ns;			-- DIGIT = 01
 		TBA <= '0'; wait for 200 ns;

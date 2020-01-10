@@ -5,6 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity VALIDATION is
 	port (
 		CLK : in std_logic;
+		RSTN : in std_logic;
 		ENTER_N : in std_logic;
 		NUM_N : in std_logic_vector(15 downto 0);
 		UNLOCK_N : out std_logic;
@@ -19,8 +20,10 @@ architecture RTL of VALIDATION is
 	
 begin
 
-	process (CLK, ENTER_N, NUM_N) begin
-		if (CLK'event and CLK = '1') then
+	process (CLK, RSTN, ENTER_N, NUM_N) begin
+		if (RSTN = '0') then
+			UNLOCK_N <= '0';
+		elsif (CLK'event and CLK = '1') then
 			if (ENTER_N = '1') then
 				if (NUM_N = PASS) then
 					UNLOCK_N <= '1';

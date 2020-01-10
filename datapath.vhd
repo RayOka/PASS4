@@ -25,6 +25,8 @@ end DATAPATH;
 architecture RTL of DATAPATH is
 	
 	signal TUNLOCK : std_logic;
+	signal TRSTN : std_logic;
+	signal TRSTAND : std_logic;
 	signal TNUM : std_logic_vector(15 downto 0);
 	signal TDIGIT : std_logic_vector(1 downto 0);
 	signal TDISP0, TDISP1, TDISP2, TDISP3, TMDISP : std_logic_vector(3 downto 0);
@@ -45,6 +47,7 @@ architecture RTL of DATAPATH is
 	component VALIDATION
 		port (
 			CLK : in std_logic;
+			RSTN : in std_logic;
 			ENTER_N : in std_logic;
 			NUM_N : in std_logic_vector(15 downto 0);
 			UNLOCK_N : out std_logic;
@@ -55,6 +58,7 @@ architecture RTL of DATAPATH is
 	component DISP_CTL
 		port (
 			CLK : in std_logic;
+			RSTN : in std_logic;
 			FLASH : in std_logic;
 			UNLOCK : in std_logic;
 			MODE_N : in std_logic;
@@ -77,18 +81,20 @@ architecture RTL of DATAPATH is
 	
 begin
 
+	TRSTAND <= RESET and TRSTN;
+	
 	U1 : CHANGER port map (
-		CLK=>CLK, RSTN=>RESET, DEC=>TDEC, INC=>TINC, TLEFT=>TLEFT,
+		CLK=>CLK, RSTN=>TRSTAND, DEC=>TDEC, INC=>TINC, TLEFT=>TLEFT,
 		TRIGHT=>TRIGHT, TNUM=>TNUM, DIGITN=>TDIGIT
 	);
 	
 	U2 : VALIDATION port map (
-		CLK=>CLK, ENTER_N=>TENTER, NUM_N=>TNUM,
-		UNLOCK_N=>TUNLOCK, RESET_N=>TRESET
+		CLK=>CLK, RSTN=>RESET, ENTER_N=>TENTER, NUM_N=>TNUM,
+		UNLOCK_N=>TUNLOCK, RESET_N=>TRSTN
 	);
 	
 	U3 : DISP_CTL port map (
-		CLK=>CLK, FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, MODE_N=>TMODE, DIGIT=>TDIGIT, NUM=>TNUM,
+		CLK=>CLK, RSTN=>RESET, FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, MODE_N=>TMODE, DIGIT=>TDIGIT, NUM=>TNUM,
 		DISP0=>TDISP0, DISP1=>TDISP1, DISP2=>TDISP2, DISP3=>TDISP3, MDISP=>TMDISP
 	);
 	
@@ -110,5 +116,6 @@ begin
 	);
 	
 	UNLOCK_N <= TUNLOCK;
+	TRESET <= TRSTN;
 	
 end RTL;

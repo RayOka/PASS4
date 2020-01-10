@@ -1,0 +1,635 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do pass4_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/switch.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:16 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/switch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SWITCH
+# -- Compiling architecture RTL of SWITCH
+# End time: 00:54:16 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/pass4.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:16 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PASS4
+# -- Compiling architecture RTL of PASS4
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/leddec.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LEDDEC
+# -- Compiling architecture RTL of LEDDEC
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/clockDown.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CLKDOWN
+# -- Compiling architecture RTL of CLKDOWN
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/control.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CONTROL
+# -- Compiling architecture RTL of CONTROL
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/disp_ctl.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity DISP_CTL
+# -- Compiling architecture RTL of DISP_CTL
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/changer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/changer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CHANGER
+# -- Compiling architecture RTL of CHANGER
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {F:/Documents/PASSCODE_FPGA/datapath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:17 on Jan 11,2020
+# vcom -reportprogress 300 -93 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DATAPATH
+# -- Compiling architecture RTL of DATAPATH
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(84): (vcom-1436) Actual expression (infix expression) of formal "RSTN" is not globally static.
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(118): VHDL Compiler exiting
+# End time: 00:54:17 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/18.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./pass4_run_msim_rtl_vhdl.do line 15
+# C:/intelFPGA/18.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {F:/Documents/PASSCODE_FPGA/datapath.vhd}"
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CHANGER
+# -- Compiling architecture RTL of CHANGER
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CLKDOWN
+# -- Compiling architecture RTL of CLKDOWN
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CONTROL
+# -- Compiling architecture RTL of CONTROL
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DATAPATH
+# -- Compiling architecture RTL of DATAPATH
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(84): (vcom-1436) Actual expression (infix expression) of formal "RSTN" is not globally static.
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(118): VHDL Compiler exiting
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity DISP_CTL
+# -- Compiling architecture RTL of DISP_CTL
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LEDDEC
+# -- Compiling architecture RTL of LEDDEC
+# End time: 00:54:40 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:40 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PASS4
+# -- Compiling architecture RTL of PASS4
+# End time: 00:54:41 on Jan 11,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:41 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SWITCH
+# -- Compiling architecture RTL of SWITCH
+# End time: 00:54:41 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:41 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TBPASS4
+# -- Compiling architecture TBPASS4 of TBPASS4
+# -- Compiling configuration CFG_TBPASS4
+# -- Loading entity TBPASS4
+# -- Loading architecture TBPASS4 of TBPASS4
+# -- Loading entity PASS4
+# End time: 00:54:41 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:54:41 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VALIDATION
+# -- Compiling architecture RTL of VALIDATION
+# End time: 00:54:41 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CHANGER
+# -- Compiling architecture RTL of CHANGER
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CLKDOWN
+# -- Compiling architecture RTL of CLKDOWN
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CONTROL
+# -- Compiling architecture RTL of CONTROL
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DATAPATH
+# -- Compiling architecture RTL of DATAPATH
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(84): (vcom-1436) Actual expression (infix expression) of formal "RSTN" is not globally static.
+# ** Error: F:/Documents/PASSCODE_FPGA/datapath.vhd(118): VHDL Compiler exiting
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity DISP_CTL
+# -- Compiling architecture RTL of DISP_CTL
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LEDDEC
+# -- Compiling architecture RTL of LEDDEC
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PASS4
+# -- Compiling architecture RTL of PASS4
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SWITCH
+# -- Compiling architecture RTL of SWITCH
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TBPASS4
+# -- Compiling architecture TBPASS4 of TBPASS4
+# -- Compiling configuration CFG_TBPASS4
+# -- Loading entity TBPASS4
+# -- Loading architecture TBPASS4 of TBPASS4
+# -- Loading entity PASS4
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:34 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VALIDATION
+# -- Compiling architecture RTL of VALIDATION
+# End time: 00:59:34 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:44 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CHANGER
+# -- Compiling architecture RTL of CHANGER
+# End time: 01:01:44 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:44 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CLKDOWN
+# -- Compiling architecture RTL of CLKDOWN
+# End time: 01:01:44 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:44 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CONTROL
+# -- Compiling architecture RTL of CONTROL
+# End time: 01:01:44 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:44 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DATAPATH
+# -- Compiling architecture RTL of DATAPATH
+# End time: 01:01:44 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity DISP_CTL
+# -- Compiling architecture RTL of DISP_CTL
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LEDDEC
+# -- Compiling architecture RTL of LEDDEC
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PASS4
+# -- Compiling architecture RTL of PASS4
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SWITCH
+# -- Compiling architecture RTL of SWITCH
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TBPASS4
+# -- Compiling architecture TBPASS4 of TBPASS4
+# -- Compiling configuration CFG_TBPASS4
+# -- Loading entity TBPASS4
+# -- Loading architecture TBPASS4 of TBPASS4
+# -- Loading entity PASS4
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:01:45 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VALIDATION
+# -- Compiling architecture RTL of VALIDATION
+# End time: 01:01:45 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:21 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/changer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CHANGER
+# -- Compiling architecture RTL of CHANGER
+# End time: 01:02:21 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:21 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/clockDown.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CLKDOWN
+# -- Compiling architecture RTL of CLKDOWN
+# End time: 01:02:21 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:21 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity CONTROL
+# -- Compiling architecture RTL of CONTROL
+# End time: 01:02:21 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:21 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DATAPATH
+# -- Compiling architecture RTL of DATAPATH
+# End time: 01:02:21 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:21 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/disp_ctl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity DISP_CTL
+# -- Compiling architecture RTL of DISP_CTL
+# End time: 01:02:21 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:22 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/leddec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LEDDEC
+# -- Compiling architecture RTL of LEDDEC
+# End time: 01:02:22 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:22 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/pass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PASS4
+# -- Compiling architecture RTL of PASS4
+# End time: 01:02:22 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:22 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/switch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SWITCH
+# -- Compiling architecture RTL of SWITCH
+# End time: 01:02:22 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:22 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/tbpass4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TBPASS4
+# -- Compiling architecture TBPASS4 of TBPASS4
+# -- Compiling configuration CFG_TBPASS4
+# -- Loading entity TBPASS4
+# -- Loading architecture TBPASS4 of TBPASS4
+# -- Loading entity PASS4
+# End time: 01:02:22 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:02:22 on Jan 11,2020
+# vcom -reportprogress 300 -work work F:/Documents/PASSCODE_FPGA/validation.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VALIDATION
+# -- Compiling architecture RTL of VALIDATION
+# End time: 01:02:22 on Jan 11,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

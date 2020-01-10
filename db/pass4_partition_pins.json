@@ -132,11 +132,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
+					"name" : "MODE",
 					"strict" : false
 				},
 				{
-					"name" : "MODE",
+					"name" : "CLK",
 					"strict" : false
 				},
 				{
