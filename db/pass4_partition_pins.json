@@ -144,15 +144,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "ENTER",
-					"strict" : false
-				},
-				{
 					"name" : "A",
 					"strict" : false
 				},
 				{
 					"name" : "B",
+					"strict" : false
+				},
+				{
+					"name" : "ENTER",
 					"strict" : false
 				}
 			]
