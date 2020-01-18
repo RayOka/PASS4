@@ -116,19 +116,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "MLED[0]",
+					"name" : "STATE_LED[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MLED[3]",
+					"name" : "STATE_LED[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MLED[4]",
+					"name" : "STATE_LED[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MLED[5]",
+					"name" : "STATE_LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "STATE_LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "STATE_LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "STATE_LED[6]",
 					"strict" : false
 				},
 				{
@@ -144,15 +156,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "ENTER",
+					"strict" : false
+				},
+				{
 					"name" : "A",
 					"strict" : false
 				},
 				{
 					"name" : "B",
-					"strict" : false
-				},
-				{
-					"name" : "ENTER",
 					"strict" : false
 				}
 			]

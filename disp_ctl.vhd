@@ -14,8 +14,7 @@ entity DISP_CTL is
 		DISP0 : out std_logic_vector(3 downto 0);
 		DISP1 : out std_logic_vector(3 downto 0);
 		DISP2 : out std_logic_vector(3 downto 0);
-		DISP3 : out std_logic_vector(3 downto 0);
-		MDISP : out std_logic_vector(3 downto 0)
+		DISP3 : out std_logic_vector(3 downto 0)
 	);
 end DISP_CTL;
 
@@ -53,16 +52,6 @@ begin
 				if (FLASH = '1') then
 					LIGHTING <= not LIGHTING;
 				end if;
-			end if;
-		end if;
-	end process;
-	
-	MODE : process(MODE_N) begin
-		if (CLK'event and CLK = '1') then
-			if (MODE_N = '0') then
-				MDISP <= "0000";
-			elsif (MODE_N = '1') then
-				MDISP <= "0001";
 			end if;
 		end if;
 	end process;

@@ -18,7 +18,7 @@ entity DATAPATH is
 		LED1 : out std_logic_vector(6 downto 0);
 		LED2 : out std_logic_vector(6 downto 0);
 		LED3 : out std_logic_vector(6 downto 0);
-		MLED : out std_logic_vector(6 downto 0)
+		STATE_LED : out std_logic_vector(6 downto 0)
 	);
 end DATAPATH;
 
@@ -29,7 +29,8 @@ architecture RTL of DATAPATH is
 	signal TRSTAND : std_logic;
 	signal TNUM : std_logic_vector(15 downto 0);
 	signal TDIGIT : std_logic_vector(1 downto 0);
-	signal TDISP0, TDISP1, TDISP2, TDISP3, TMDISP : std_logic_vector(3 downto 0);
+	signal TSTATE : std_logic_vector(1 downto 0);
+	signal TDISP0, TDISP1, TDISP2, TDISP3, TSTATE_DISP : std_logic_vector(3 downto 0);
 	
 	component CHANGER 
 		port (
@@ -51,7 +52,8 @@ architecture RTL of DATAPATH is
 			ENTER_N : in std_logic;
 			NUM_N : in std_logic_vector(15 downto 0);
 			UNLOCK_N : out std_logic;
-			RESET_N : out std_logic
+			RESET_N : out std_logic;
+			STATE_N : out std_logic_vector(3 downto 0)
 		);
 	end component;
 
@@ -67,8 +69,7 @@ architecture RTL of DATAPATH is
 			DISP0 : out std_logic_vector(3 downto 0);
 			DISP1 : out std_logic_vector(3 downto 0);
 			DISP2 : out std_logic_vector(3 downto 0);
-			DISP3 : out std_logic_vector(3 downto 0);
-			MDISP : out std_logic_vector(3 downto 0)
+			DISP3 : out std_logic_vector(3 downto 0)
 		);
 	end component;
 	
@@ -90,12 +91,12 @@ begin
 	
 	U2 : VALIDATION port map (
 		CLK=>CLK, RSTN=>RESET, ENTER_N=>TENTER, NUM_N=>TNUM,
-		UNLOCK_N=>TUNLOCK, RESET_N=>TRSTN
+		UNLOCK_N=>TUNLOCK, RESET_N=>TRSTN, STATE_N=>TSTATE_DISP
 	);
 	
 	U3 : DISP_CTL port map (
-		CLK=>CLK, RSTN=>RESET, FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, MODE_N=>TMODE, DIGIT=>TDIGIT, NUM=>TNUM,
-		DISP0=>TDISP0, DISP1=>TDISP1, DISP2=>TDISP2, DISP3=>TDISP3, MDISP=>TMDISP
+		CLK=>CLK, RSTN=>RESET, FLASH=>EN100MSEC, UNLOCK=>TUNLOCK, MODE_N=>TMODE, DIGIT=>TDIGIT,
+		NUM=>TNUM, DISP0=>TDISP0, DISP1=>TDISP1, DISP2=>TDISP2, DISP3=>TDISP3
 	);
 	
 	U4 : LEDDEC port map (
@@ -112,7 +113,7 @@ begin
 	);
 	
 	U8 : LEDDEC port map (
-		DATA=>TMDISP, LEDOUT=>MLED
+		DATA=>TSTATE_DISP, LEDOUT=>STATE_LED
 	);
 	
 	UNLOCK_N <= TUNLOCK;

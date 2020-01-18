@@ -9,6 +9,7 @@ entity CONTROL is
 		MODE : in std_logic;
 		A : in std_logic;
 		B : in std_logic;
+		ENTER : in std_logic;
 		UNLOCK : in std_logic;
 		TDEC : out std_logic;
 		TINC : out std_logic;
@@ -19,7 +20,7 @@ end CONTROL;
 
 architecture RTL of CONTROL is
 	
-	type STATE is (VALUE_ST, DIGIT_ST, RIGHT_ST, LEFT_ST, INC_ST, DEC_ST, UNLOCK_ST);
+	type STATE is (VALUE_ST, DIGIT_ST, DEC_ST, INC_ST, LEFT_ST, RIGHT_ST, UNLOCK_ST);
 	signal CURRENT_STATE, NEXT_STATE : STATE;
 	
 begin
@@ -36,7 +37,7 @@ begin
 		end if;
 	end process;
 	
-	STATE_TRANS : process(MODE, A, B, UNLOCK, CURRENT_STATE) begin
+	STATE_TRANS : process(MODE, A, B, ENTER, UNLOCK, CURRENT_STATE) begin
 		if (CURRENT_STATE = VALUE_ST) then
 			if (A = '1') then
 				NEXT_STATE <= DEC_ST;
@@ -69,6 +70,14 @@ begin
 			NEXT_STATE <= DIGIT_ST;
 		elsif (CURRENT_STATE = RIGHT_ST) then
 			NEXT_STATE <= DIGIT_ST;
+		elsif (CURRENT_STATE = UNLOCK_ST) then
+			if (ENTER = '1') then
+				if (MODE = '0') then
+					NEXT_STATE <= VALUE_ST;
+				else
+					NEXT_STATE <= DIGIT_ST;
+				end if;
+			end if;
 		end if;
 	end process;
 	
@@ -108,7 +117,7 @@ begin
 			TINC <= '0';
 			TLEFT <= '0';
 			TRIGHT <= '0';
-		else
+		elsif (CURRENT_STATE = UNLOCK_ST) then
 			TDEC <= '0';
 			TINC <= '0';
 			TLEFT <= '0';

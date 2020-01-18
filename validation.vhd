@@ -9,7 +9,8 @@ entity VALIDATION is
 		ENTER_N : in std_logic;
 		NUM_N : in std_logic_vector(15 downto 0);
 		UNLOCK_N : out std_logic;
-		RESET_N : out std_logic
+		RESET_N : out std_logic;
+		STATE_N : out std_logic_vector(3 downto 0)
 	);
 end VALIDATION;
 
@@ -32,17 +33,18 @@ begin
 		end if;
 	end process;
 	
-	STATE_TRANS : process(ENTER_N, NUM_N, CURRENT_STATE, PREVIOUS_STATE) begin
+	STATE_TRANS : process(ENTER_N, CURRENT_STATE) begin
 		if (CURRENT_STATE = ALL_RESET_ST) then
 			PASS <= INITPASS;
 			NEXT_STATE <= IDLE_ST;
+			PREVIOUS_STATE <= CURRENT_STATE;
 		elsif (CURRENT_STATE = IDLE_ST) then
 			if (ENTER_N = '1') then
 				NEXT_STATE <= JUDGES_ST;
 			end if;
 		elsif (CURRENT_STATE = JUDGES_ST) then
 			if (NUM_N = PASS) then
-				NEXT_STATE <= JUDGES_ST;
+				NEXT_STATE <= SUCCESS_ST;
 			else
 				NEXT_STATE <= NUM_RESET_ST;
 			end if;
@@ -54,14 +56,13 @@ begin
 		elsif (CURRENT_STATE = MEMORY_ST) then
 			if (ENTER_N = '1') then
 				PASS <= NUM_N;
-				PREVIOUS_STATE <= CURRENT_STATE;
 				NEXT_STATE <= NUM_RESET_ST;
 			end if;
 		elsif (CURRENT_STATE = NUM_RESET_ST) then
-			if (PREVIOUS_STATE = JUDGES_ST) then
-				NEXT_STATE <= IDLE_ST;
-			elsif (PREVIOUS_STATE = SUCCESS_ST) then
+			if (PREVIOUS_STATE = SUCCESS_ST) then
 				NEXT_STATE <= MEMORY_ST;
+			else 
+				NEXT_STATE <= IDLE_ST;
 			end if;
 		end if;
 	end process;
@@ -70,21 +71,31 @@ begin
 		if (CURRENT_STATE = ALL_RESET_ST) then
 			UNLOCK_N <= '0';
 			RESET_N <= '0';
+			STATE_N <= "0000";
 		elsif (CURRENT_STATE = IDLE_ST) then
 			UNLOCK_N <= '0';
 			RESET_N <= '1';
+			STATE_N <= "0001";
 		elsif (CURRENT_STATE = JUDGES_ST) then
 			UNLOCK_N <= '0';
 			RESET_N <= '1';
+			STATE_N <= "0100";
 		elsif (CURRENT_STATE = SUCCESS_ST) then
 			UNLOCK_N <= '1';
 			RESET_N <= '1';
+			STATE_N <= "0010";
 		elsif (CURRENT_STATE = MEMORY_ST) then
 			UNLOCK_N <= '0';
 			RESET_N <= '1';
+			STATE_N <= "0011";
 		elsif (CURRENT_STATE = NUM_RESET_ST) then
 			UNLOCK_N <= '0';
 			RESET_N <= '0';
+			STATE_N <= "0101";
+		else
+			UNLOCK_N <= '0';
+			RESET_N <= '1';
+			STATE_N <= "0110";
 		end if;
 	end process;
 	
@@ -93,7 +104,7 @@ begin
 --			UNLOCK_N <= '0';
 --		elsif (CLK'event and CLK = '1') then
 --			if (ENTER_N = '1') then
---				if (NUM_N = PASS) then
+--				if (NUM_N = INITPASS) then
 --					UNLOCK_N <= '1';
 --				else
 --					UNLOCK_N <= '0';
