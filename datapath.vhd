@@ -13,7 +13,6 @@ entity DATAPATH is
 		TRIGHT : in std_logic;
 		TENTER : in std_logic;
 		UNLOCK_N : out std_logic;
-		TRESET : out std_logic;
 		LED0 : out std_logic_vector(6 downto 0);
 		LED1 : out std_logic_vector(6 downto 0);
 		LED2 : out std_logic_vector(6 downto 0);
@@ -117,6 +116,5 @@ begin
 	);
 	
 	UNLOCK_N <= TUNLOCK;
-	TRESET <= TRSTN;
 	
 end RTL;

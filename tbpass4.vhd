@@ -14,7 +14,8 @@ architecture TBPASS4 of TBPASS4 is
 			LED0 : out std_logic_vector(6 downto 0);
 			LED1 : out std_logic_vector(6 downto 0);
 			LED2 : out std_logic_vector(6 downto 0);
-			LED3 : out std_logic_vector(6 downto 0)
+			LED3 : out std_logic_vector(6 downto 0);
+			STATE_LED : out std_logic_vector(6 downto 0)
 	);
 end component;
 
@@ -23,12 +24,12 @@ end component;
 	signal TBMODE : std_logic;
 	signal TBA, TBB : std_logic;
 	signal TBENTER : std_logic;
-	signal TBLED0, TBLED1, TBLED2, TBLED3 : std_logic_vector(6 downto 0);
+	signal TBLED0, TBLED1, TBLED2, TBLED3, TBSLED : std_logic_vector(6 downto 0);
 begin
 
 	U1 : PASS4 port map (
 		CLK=>TBCLK, RESET=>TBRESET, MODE=>TBMODE, A=>TBA, B=>TBB, ENTER=>TBENTER,
-		LED0=>TBLED0, LED1=>TBLED1, LED2=>TBLED2, LED3=>TBLED3
+		LED0=>TBLED0, LED1=>TBLED1, LED2=>TBLED2, LED3=>TBLED3, STATE_LED=>TBSLED
 	);
 	
 	process begin
@@ -42,20 +43,66 @@ begin
 	end process;
 	
 	process begin
-		TBMODE <= '0';
 		TBA <= '1';
 		TBB <= '1';
-		TBENTER <= '1'; wait for 200 ns;
-		TBA <= '0'; wait for 200 ns;
-		TBA <= '1'; wait for 200 ns;			-- DIGIT = 01
-		TBA <= '0'; wait for 200 ns;
-		TBA <= '1'; wait for 200 ns;			-- DIGIT = 10
+		TBENTER <= '1';
+		TBMODE <= '1';	wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		
+		TBMODE <= '0'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		
+		TBMODE <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		
+		TBMODE <= '0'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		
+		TBMODE <= '1'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
+		
+		TBMODE <= '0'; wait for 200 ns;
+		TBB <= '0'; wait for 200 ns;
+		TBB <= '1'; wait for 200 ns;
 		
 		TBMODE <= '1'; wait for 200 ns;
 		TBA <= '0'; wait for 200 ns;
 		TBA <= '1'; wait for 200 ns;
-		TBA <= '0'; wait for 200 ns;
-		TBA <= '1'; wait;							-- LED2 = 10100100
+		
+		TBENTER <= '0'; wait for 800 ns;
+		TBENTER <= '1'; wait for 1000 ns;
+		
+		TBENTER <= '0'; wait for 200 ns;
+		TBENTER <= '1'; wait;
+		
+		
+		
+		
 	end process;
 	
 end TBPASS4;

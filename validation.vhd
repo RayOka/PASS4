@@ -21,7 +21,7 @@ architecture RTL of VALIDATION is
 	signal PASS : std_logic_vector(15 downto 0);
 					  
 	type STATE is (ALL_RESET_ST, IDLE_ST, JUDGES_ST, SUCCESS_ST, MEMORY_ST, NUM_RESET_ST);
-	signal CURRENT_STATE, NEXT_STATE, PREVIOUS_STATE : STATE;
+	signal CURRENT_STATE, NEXT_STATE : STATE;
 		
 begin
 
@@ -33,11 +33,10 @@ begin
 		end if;
 	end process;
 	
-	STATE_TRANS : process(ENTER_N, CURRENT_STATE) begin
+	STATE_TRANS : process(CLK, ENTER_N, CURRENT_STATE) begin
 		if (CURRENT_STATE = ALL_RESET_ST) then
 			PASS <= INITPASS;
 			NEXT_STATE <= IDLE_ST;
-			PREVIOUS_STATE <= CURRENT_STATE;
 		elsif (CURRENT_STATE = IDLE_ST) then
 			if (ENTER_N = '1') then
 				NEXT_STATE <= JUDGES_ST;
@@ -49,9 +48,10 @@ begin
 				NEXT_STATE <= NUM_RESET_ST;
 			end if;
 		elsif (CURRENT_STATE = SUCCESS_ST) then
-			if (ENTER_N = '1') then
-				PREVIOUS_STATE <= CURRENT_STATE;
-				NEXT_STATE <= MEMORY_ST;
+			if (CLK'event and CLK = '1') then
+				if (ENTER_N = '1') then
+					NEXT_STATE <= MEMORY_ST;
+				end if;
 			end if;
 		elsif (CURRENT_STATE = MEMORY_ST) then
 			if (ENTER_N = '1') then
@@ -59,11 +59,7 @@ begin
 				NEXT_STATE <= NUM_RESET_ST;
 			end if;
 		elsif (CURRENT_STATE = NUM_RESET_ST) then
-			if (PREVIOUS_STATE = SUCCESS_ST) then
-				NEXT_STATE <= MEMORY_ST;
-			else 
-				NEXT_STATE <= IDLE_ST;
-			end if;
+			NEXT_STATE <= IDLE_ST;
 		end if;
 	end process;
 	
@@ -82,7 +78,7 @@ begin
 			STATE_N <= "0100";
 		elsif (CURRENT_STATE = SUCCESS_ST) then
 			UNLOCK_N <= '1';
-			RESET_N <= '1';
+			RESET_N <= '0';
 			STATE_N <= "0010";
 		elsif (CURRENT_STATE = MEMORY_ST) then
 			UNLOCK_N <= '0';
